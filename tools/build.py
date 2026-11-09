@@ -44,6 +44,7 @@ def main():
     shutil.copy2(ROOT / 'media/example-camera-adapter/stream_webcam.py', output / 'fleetlyhub-camera.py')
     shutil.copy2(ROOT / 'tools/run-agent.ps1', output)
     shutil.copy2(ROOT / 'LICENSE', output)
+    shutil.copy2(ROOT / 'NOTICE', output)
     shutil.copy2(ROOT / 'THIRD_PARTY_NOTICES.md', output)
     print('Built public robot software in dist; no enrollment or deployment performed.')
 

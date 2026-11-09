@@ -1,8 +1,9 @@
 {
   "format": 1,
   "agent_version": "0.1.10",
-  "source_tree_sha256": "296ca9d8d03f511b3f2a9d205038cf7ded62cd04d4aa44144a239306092ee9e1",
+  "source_tree_sha256": "36fd3cb18e1c9001ee9456487e391e536ff8a5dcd3e2db70d1b9a559a0f012ed",
   "files": {
+    ".gitattributes": "d60f352d0db1404c70afb4bb8b2ca3fd1c610572aa40720e8a0b7baa7885418c",
     ".github/workflows/build.yml": "4a096f4d23fd7f17250a32a83c96f3ec02f4eaf1f5afa0d36a0595cf299deebf",
     ".gitignore": "9e474ba54a4be9af0fcf0beb2c7f86e63d10492ac5d86aad4e61d0a1988d85c8",
     "LICENSE": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30",
@@ -110,7 +111,7 @@
     "service-bridge/systemd.go": "ca99a7dea0f3bac3d79147b265ebf7b9391ee5bfef81d195be4947b9b901bf0f",
     "service-bridge/transport.go": "13702fa04234e11cf6683b89aab5ca8f89c7f1b2ed5f96a56c1ca8e4d423b422",
     "service-bridge/transport_control_test.go": "dfb4fec296f7325747749ff7a63bb9fde1392641f9c3308cd2778d302b87157e",
-    "tools/build.py": "251341e5cec8bf2c511d542f75abb03ad7a0aa5b8d18989e088a648a5fe0120a",
+    "tools/build.py": "4b6cfe8efa23c3c2e438d7b20a097b6d46b06756ca80d69aa583db71e042f571",
     "tools/contract-requirements.txt": "cb9e5058abe248be8579db704a1c9e30e655b30cb7d5dd093bebf97f44766591",
     "tools/run-agent.ps1": "e930a399abc34bf9a0db385b154f2121ca495f9eaa8c75de0676b6c402328b4e",
     "tools/rust-version": "386da02a89a536e65e92bcb0a8e6263d723ad93d276a4553afdc331071b1733a",
