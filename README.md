@@ -13,6 +13,8 @@ available remotely. Fleetly operational controls are not safety-rated stops.
 - [Install and enroll](docs/install.md).
 - [Build from this public source](docs/build.md), without private GitHub access.
 - [Local interface and Media contracts](contracts/README.md).
+- [AI-assisted integration: start here](docs/ai/README.md), with camera, telemetry,
+  diagnostics/ROS 2, services and task-control guides.
 - [Camera helper and existing video sources](docs/camera.md).
 - [Linux service bridge](docs/services.md).
 - [Security and support](SECURITY.md), [third-party notices](THIRD_PARTY_NOTICES.md).
@@ -27,5 +29,5 @@ Hub server implementation, deployment credentials or APT publishing access.
 Release metadata identifies the public source tree; official package release
 and source synchronization are separate operations. Contract metadata states
 component/protocol compatibility. Do not use unadvertised runtime fields as a
-supported API. Dedicated AI integration guides are a later documentation phase;
-the current contracts and examples are ready for inspection.
+supported API. The AI guides reference these contracts and include integration
+acceptance checks; they do not replace testing on your own robot.

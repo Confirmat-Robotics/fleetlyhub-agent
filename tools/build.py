@@ -21,6 +21,7 @@ def main():
     bridge = os.name != 'nt'
     if args.check:
         run([sys.executable, 'tools/validate_contracts.py'])
+        run([sys.executable, 'tools/validate_ai_guides.py'])
         run(['cargo', 'fmt', '--check'], ROOT / 'agent')
         run(['cargo', 'clippy', '--locked', '--all-targets', '--all-features', '--', '-D', 'warnings'], ROOT / 'agent')
         run(['cargo', 'test', '--locked'], ROOT / 'agent')
