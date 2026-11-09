@@ -1,9 +1,9 @@
 # Security and support
 
-Report suspected vulnerabilities through https://fleetlyhub.eu/contact and
-request a private security conversation. Do not put exploit details in the
-initial contact message or publish credentials, robot identifiers or private
-diagnostics in a public issue.
+Use this repository's Security tab → Report a vulnerability for a private report.
+If unavailable, use https://fleetlyhub.eu/contact and request a private security
+conversation without exploit details in the initial message. Do not publish
+credentials, robot identifiers or private diagnostics in a public issue.
 
 Use the current supported official release. Security support initially covers
 the latest stable Agent/Media combination, not arbitrary historical/custom builds

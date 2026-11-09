@@ -28,6 +28,7 @@ Run the Agent from `dist` with an explicit persistent `--state-dir`; place Media
 on the current process PATH or configure its absolute path in `settings.json`.
 See installation instructions. Build checks are not real robot/hardware tests.
 
-CI runs native Linux amd64/arm64 and Windows x64 builds. It publishes short-lived
-build artifacts and SBOMs without signing keys or production access. These are
-source-build artifacts, not an automatically approved official APT release.
+CI runs native Linux amd64/arm64 and Windows x64 builds and retains short-lived
+SBOM evidence without signing keys or production access. These jobs do not
+distribute binaries or publish official packages; that remains the separate
+release process, including dependency notices and release checks.
