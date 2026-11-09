@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.command.v1",
+  "title": "Fleetly robot command v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "command_id",
+    "issued_at",
+    "expires_at",
+    "parameters"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.command.v1"
+    },
+    "command_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "issued_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "parameters": {
+      "type": "object",
+      "maxProperties": 32
+    }
+  }
+}

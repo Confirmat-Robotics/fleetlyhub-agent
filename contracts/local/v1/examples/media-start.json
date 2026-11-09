@@ -1,0 +1,17 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "media/start",
+  "payload": {
+    "schema": "fleetly.local-media-control.v2",
+    "action": "start",
+    "publication_id": "publication-example",
+    "expires_at": 1790000900000,
+    "input": {
+      "transport": "tcp",
+      "host": "127.0.0.1",
+      "port": 7002,
+      "protocol": "fleetly.media.v1",
+      "codec": "h264"
+    }
+  }
+}

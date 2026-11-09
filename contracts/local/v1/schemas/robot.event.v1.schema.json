@@ -1,0 +1,52 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.event.v1",
+  "title": "Fleetly robot event v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "event_id",
+    "ts",
+    "severity",
+    "source"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.event.v1"
+    },
+    "event_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+    },
+    "ts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "info",
+        "warning",
+        "error",
+        "critical"
+      ]
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "message": {
+      "type": "string",
+      "maxLength": 1024
+    },
+    "details": {
+      "type": "object",
+      "maxProperties": 32
+    }
+  }
+}

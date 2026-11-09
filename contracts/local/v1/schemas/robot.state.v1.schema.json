@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.state.v1",
+  "title": "Fleetly robot state v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "ts",
+    "mode",
+    "execution_state",
+    "available_commands"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.state.v1"
+    },
+    "ts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "mode": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 64
+    },
+    "execution_state": {
+      "type": "string",
+      "enum": [
+        "idle",
+        "ready",
+        "running",
+        "paused",
+        "finished",
+        "failed"
+      ]
+    },
+    "available_commands": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 3,
+      "items": {
+        "type": "string",
+        "enum": [
+          "pause",
+          "stop",
+          "resume"
+        ]
+      }
+    },
+    "fault_codes": {
+      "type": "array",
+      "uniqueItems": true,
+      "maxItems": 32,
+      "items": {
+        "type": "string",
+        "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"
+      }
+    }
+  }
+}

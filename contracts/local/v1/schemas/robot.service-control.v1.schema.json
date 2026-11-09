@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.service-control.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "command_id",
+    "issued_at",
+    "expires_at",
+    "service",
+    "action"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.service-control.v1"
+    },
+    "command_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,127}$",
+      "maxLength": 128
+    },
+    "issued_at": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9007199254740991
+    },
+    "service": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9_.@:-]{0,119}\\.service$",
+      "maxLength": 128
+    },
+    "action": {
+      "type": "string",
+      "enum": [
+        "start",
+        "stop",
+        "restart"
+      ]
+    }
+  }
+}

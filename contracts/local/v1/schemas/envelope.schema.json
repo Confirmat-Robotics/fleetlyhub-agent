@@ -1,0 +1,349 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:envelope",
+  "oneOf": [
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "agent/register"
+        },
+        "payload": {
+          "$ref": "fleetly.local-registration.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "agent/registered"
+        },
+        "payload": {
+          "$ref": "fleetly.local-registration-result.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "agent/error"
+        },
+        "payload": {
+          "$ref": "fleetly.local-error.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "telemetry"
+        },
+        "payload": {
+          "$ref": "robot.telemetry.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "state"
+        },
+        "payload": {
+          "$ref": "robot.state.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "type": "string",
+          "pattern": "^events/[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+        },
+        "payload": {
+          "$ref": "robot.event.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "camera/status"
+        },
+        "payload": {
+          "$ref": "robot.camera-status.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "type": "string",
+          "pattern": "^command-results/[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "payload": {
+          "$ref": "robot.command-result.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "commands/stop"
+        },
+        "payload": {
+          "$ref": "robot.command.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "commands/pause"
+        },
+        "payload": {
+          "$ref": "robot.command.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "commands/resume"
+        },
+        "payload": {
+          "$ref": "robot.command.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "supervision"
+        },
+        "payload": {
+          "$ref": "robot.supervision.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "media/start"
+        },
+        "payload": {
+          "$ref": "fleetly.local-media-control.v2.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "media/stop"
+        },
+        "payload": {
+          "$ref": "fleetly.local-media-control.v2.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "services/status"
+        },
+        "payload": {
+          "$ref": "robot.services-status.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "const": "services/control"
+        },
+        "payload": {
+          "$ref": "robot.service-control.v1.schema.json"
+        }
+      }
+    },
+    {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "protocol",
+        "topic",
+        "payload"
+      ],
+      "properties": {
+        "protocol": {
+          "const": "fleetly.local.v1"
+        },
+        "topic": {
+          "type": "string",
+          "pattern": "^services/control-results/[A-Za-z0-9][A-Za-z0-9._-]{0,127}$"
+        },
+        "payload": {
+          "$ref": "robot.service-control-result.v1.schema.json"
+        }
+      }
+    }
+  ]
+}

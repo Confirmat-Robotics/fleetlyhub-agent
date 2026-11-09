@@ -1,0 +1,8 @@
+{
+  "contract_package": 1,
+  "agent_version": "0.1.10",
+  "local_protocol": "fleetly.local.v1",
+  "media_protocol": "fleetly.media.v1",
+  "local_media_control": "fleetly.local-media-control.v2",
+  "scope": "Supported customer integration subset; runtime transport remains unchanged."
+}

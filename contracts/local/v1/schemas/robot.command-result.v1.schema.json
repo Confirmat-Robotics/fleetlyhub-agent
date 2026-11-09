@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.command-result.v1",
+  "title": "Fleetly robot command result v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "ts",
+    "result_seq",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.command-result.v1"
+    },
+    "ts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "result_seq": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "received",
+        "accepted",
+        "running",
+        "succeeded",
+        "rejected",
+        "failed",
+        "expired"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "maxLength": 512
+    },
+    "result": {
+      "type": "object",
+      "maxProperties": 32
+    }
+  }
+}

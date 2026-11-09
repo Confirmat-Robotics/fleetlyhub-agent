@@ -1,0 +1,15 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "agent/register",
+  "payload": {
+    "schema": "fleetly.local-registration.v1",
+    "client_id": "service-bridge",
+    "publish_routes": [
+      "services/status",
+      "services/control-results/+"
+    ],
+    "subscribe_routes": [
+      "services/control"
+    ]
+  }
+}

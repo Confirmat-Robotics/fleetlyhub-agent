@@ -1,0 +1,9 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "agent/error",
+  "payload": {
+    "schema": "fleetly.local-error.v1",
+    "code": "event_outbox_unavailable",
+    "message": "Issue was not accepted; preserve it and retry after storage is restored."
+  }
+}

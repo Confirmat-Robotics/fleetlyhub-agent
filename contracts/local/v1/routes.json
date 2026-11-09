@@ -1,0 +1,107 @@
+{
+  "protocol": "fleetly.local.v1",
+  "routes": [
+    {
+      "topic": "agent/register",
+      "schema": "fleetly.local-registration.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "registration"
+    },
+    {
+      "topic": "agent/registered",
+      "schema": "fleetly.local-registration-result.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "registration"
+    },
+    {
+      "topic": "agent/error",
+      "schema": "fleetly.local-error.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "agent"
+    },
+    {
+      "topic": "telemetry",
+      "schema": "robot.telemetry.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "state",
+      "schema": "robot.state.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "events/+",
+      "schema": "robot.event.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "camera/status",
+      "schema": "robot.camera-status.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "command-results/+",
+      "schema": "robot.command-result.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "commands/stop",
+      "schema": "robot.command.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "commands/pause",
+      "schema": "robot.command.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "commands/resume",
+      "schema": "robot.command.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "supervision",
+      "schema": "robot.supervision.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "media/start",
+      "schema": "fleetly.local-media-control.v2.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "media/stop",
+      "schema": "fleetly.local-media-control.v2.schema.json",
+      "direction": "from-agent",
+      "owner": "robot-adapter"
+    },
+    {
+      "topic": "services/status",
+      "schema": "robot.services-status.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "service-bridge"
+    },
+    {
+      "topic": "services/control",
+      "schema": "robot.service-control.v1.schema.json",
+      "direction": "from-agent",
+      "owner": "service-bridge"
+    },
+    {
+      "topic": "services/control-results/+",
+      "schema": "robot.service-control-result.v1.schema.json",
+      "direction": "to-agent",
+      "owner": "service-bridge"
+    }
+  ]
+}

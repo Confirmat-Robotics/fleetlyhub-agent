@@ -1,0 +1,9 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "media/stop",
+  "payload": {
+    "schema": "fleetly.local-media-control.v2",
+    "action": "stop",
+    "publication_id": "publication-example"
+  }
+}

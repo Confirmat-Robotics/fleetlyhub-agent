@@ -1,0 +1,18 @@
+[Unit]
+Description=Fleetly Hub livefeed camera adapter
+After=fleetlyhub-agent.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fleetlyhub-camera --device /dev/video0 --width 640 --height 480 --fps 15
+Environment=PYTHONUNBUFFERED=1
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=3
+KillMode=control-group
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

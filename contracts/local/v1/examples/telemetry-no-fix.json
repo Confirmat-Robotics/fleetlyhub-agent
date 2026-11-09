@@ -1,0 +1,12 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "telemetry",
+  "payload": {
+    "schema": "robot.telemetry.v1",
+    "ts": 1790000000000,
+    "battery_pct": 72.5,
+    "location": {
+      "known": false
+    }
+  }
+}

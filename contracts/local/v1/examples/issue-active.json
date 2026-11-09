@@ -1,0 +1,16 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "events/diagnostics",
+  "payload": {
+    "schema": "robot.event.v1",
+    "event_id": "motor-temperature-001",
+    "ts": 1790000000000,
+    "severity": "warning",
+    "source": "robot-diagnostics",
+    "active": true,
+    "message": "issue-active",
+    "details": {
+      "temperature_c": 81
+    }
+  }
+}

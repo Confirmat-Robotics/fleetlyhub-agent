@@ -1,0 +1,11 @@
+/dist/
+/agent/target/
+__pycache__/
+*.pyc
+/.local/
+/agent/.local/
+/media/.local/
+/service-bridge/.local/
+*.key
+*.pem
+*.crt

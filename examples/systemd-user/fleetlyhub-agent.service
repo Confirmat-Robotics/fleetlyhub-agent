@@ -1,0 +1,17 @@
+[Unit]
+Description=Fleetly Hub robot agent
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/fleetlyhub-agent --state-dir /var/lib/fleetly-agent
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGINT
+KillMode=mixed
+TimeoutStopSec=15
+
+[Install]
+WantedBy=default.target

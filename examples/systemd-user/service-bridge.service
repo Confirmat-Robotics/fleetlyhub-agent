@@ -1,0 +1,17 @@
+[Unit]
+Description=Fleetly Hub systemd service bridge
+After=fleetlyhub-agent.service
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/service-bridge --config %h/.config/fleetly-agent/services.json
+StandardInput=null
+StandardOutput=journal
+StandardError=journal
+Restart=on-failure
+RestartSec=3
+KillMode=control-group
+TimeoutStopSec=10
+
+[Install]
+WantedBy=default.target

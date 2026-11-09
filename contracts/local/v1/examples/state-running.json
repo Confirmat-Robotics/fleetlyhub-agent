@@ -1,0 +1,15 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "state",
+  "payload": {
+    "schema": "robot.state.v1",
+    "ts": 1790000000000,
+    "mode": "autonomous",
+    "execution_state": "running",
+    "available_commands": [
+      "stop",
+      "pause"
+    ],
+    "fault_codes": []
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "agent/registered",
+  "payload": {
+    "schema": "fleetly.local-registration-result.v1",
+    "client_id": "robot-adapter",
+    "accepted": true
+  }
+}

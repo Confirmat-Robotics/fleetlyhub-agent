@@ -1,0 +1,9 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "camera/status",
+  "payload": {
+    "schema": "robot.camera-status.v1",
+    "ts": 1790000000000,
+    "status": "unavailable"
+  }
+}

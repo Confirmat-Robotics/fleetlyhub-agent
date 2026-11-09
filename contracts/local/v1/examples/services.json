@@ -1,0 +1,20 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "services/status",
+  "payload": {
+    "schema": "robot.services-status.v1",
+    "ts": 1790000000000,
+    "services": [
+      {
+        "service": "navigation.service",
+        "status": "active",
+        "substatus": "running",
+        "available_actions": [
+          "start",
+          "stop",
+          "restart"
+        ]
+      }
+    ]
+  }
+}

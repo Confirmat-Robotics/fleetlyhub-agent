@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.telemetry.v1",
+  "title": "Fleetly robot telemetry v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "ts",
+    "battery_pct",
+    "location"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.telemetry.v1"
+    },
+    "ts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "battery_pct": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100
+    },
+    "temperature_c": {
+      "type": "number",
+      "minimum": -100,
+      "maximum": 200
+    },
+    "location": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "known"
+      ],
+      "properties": {
+        "known": {
+          "type": "boolean"
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1,
+          "maxLength": 128
+        },
+        "lat": {
+          "type": "number",
+          "minimum": -90,
+          "maximum": 90
+        },
+        "lon": {
+          "type": "number",
+          "minimum": -180,
+          "maximum": 180
+        }
+      },
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "known": {
+                "const": true
+              }
+            },
+            "required": [
+              "known"
+            ]
+          },
+          "then": {
+            "anyOf": [
+              {
+                "required": [
+                  "name"
+                ]
+              },
+              {
+                "required": [
+                  "lat",
+                  "lon"
+                ]
+              }
+            ]
+          },
+          "else": {
+            "not": {
+              "anyOf": [
+                {
+                  "required": [
+                    "name"
+                  ]
+                },
+                {
+                  "required": [
+                    "lat"
+                  ]
+                },
+                {
+                  "required": [
+                    "lon"
+                  ]
+                }
+              ]
+            }
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "lat"
+            ]
+          },
+          "then": {
+            "required": [
+              "lon"
+            ]
+          }
+        },
+        {
+          "if": {
+            "required": [
+              "lon"
+            ]
+          },
+          "then": {
+            "required": [
+              "lat"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "agent/register",
+  "payload": {
+    "schema": "fleetly.local-registration.v1",
+    "client_id": "robot-adapter",
+    "publish_routes": [
+      "telemetry",
+      "state",
+      "events/+",
+      "camera/status",
+      "command-results/+"
+    ],
+    "subscribe_routes": [
+      "commands/stop",
+      "commands/pause",
+      "commands/resume",
+      "supervision",
+      "media/start",
+      "media/stop"
+    ]
+  }
+}

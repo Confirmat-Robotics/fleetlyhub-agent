@@ -1,0 +1,10 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "services/control-results/service-command-001",
+  "payload": {
+    "schema": "robot.service-control-result.v1",
+    "ts": 1790000001000,
+    "result_seq": 1,
+    "status": "succeeded"
+  }
+}

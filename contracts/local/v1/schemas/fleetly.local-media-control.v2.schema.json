@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:fleetly.local-media-control.v2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "action",
+    "publication_id"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fleetly.local-media-control.v2"
+    },
+    "action": {
+      "enum": [
+        "start",
+        "stop"
+      ]
+    },
+    "publication_id": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 128
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "input": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "transport",
+        "host",
+        "port",
+        "protocol",
+        "codec"
+      ],
+      "properties": {
+        "transport": {
+          "const": "tcp"
+        },
+        "host": {
+          "type": "string",
+          "enum": [
+            "127.0.0.1",
+            "::1"
+          ]
+        },
+        "port": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 65535
+        },
+        "protocol": {
+          "const": "fleetly.media.v1"
+        },
+        "codec": {
+          "const": "h264"
+        }
+      }
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "action": {
+            "const": "start"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "expires_at",
+          "input"
+        ]
+      },
+      "else": {
+        "not": {
+          "anyOf": [
+            {
+              "required": [
+                "expires_at"
+              ]
+            },
+            {
+              "required": [
+                "input"
+              ]
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "agent_address": "127.0.0.1:7001",
+  "poll_ms": 1000,
+  "heartbeat_ms": 5000,
+  "timeout_ms": 2000,
+  "services": [
+    {
+      "name": "fleetlyhub-agent.service",
+      "bus": "user"
+    },
+    {
+      "name": "livefeed_camera.service",
+      "bus": "user"
+    }
+  ],
+  "controls": {
+    "livefeed_camera.service": [
+      "start",
+      "stop",
+      "restart"
+    ]
+  }
+}

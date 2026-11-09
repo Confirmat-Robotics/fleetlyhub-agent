@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.camera-status.v1",
+  "title": "Fleetly robot camera status v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "ts",
+    "status"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.camera-status.v1"
+    },
+    "ts": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "unavailable",
+        "idle",
+        "publishing",
+        "error"
+      ]
+    },
+    "error_code": {
+      "type": "string",
+      "pattern": "^[a-z0-9][a-z0-9._-]{0,63}$"
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "status": {
+            "const": "error"
+          }
+        },
+        "required": [
+          "status"
+        ]
+      },
+      "then": {
+        "required": [
+          "error_code"
+        ]
+      },
+      "else": {
+        "not": {
+          "required": [
+            "error_code"
+          ]
+        }
+      }
+    }
+  ]
+}

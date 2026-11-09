@@ -1,0 +1,242 @@
+[
+  {
+    "name": "transport-owned-field",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "telemetry",
+      "payload": {
+        "schema": "robot.telemetry.v1",
+        "ts": 1790000000000,
+        "battery_pct": 72.5,
+        "temperature_c": 21.0,
+        "location": {
+          "known": true,
+          "lat": 51.2,
+          "lon": 5.5
+        },
+        "session_id": "forged"
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "missing-battery",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "telemetry",
+      "payload": {
+        "schema": "robot.telemetry.v1",
+        "ts": 1790000000000,
+        "temperature_c": 21.0,
+        "location": {
+          "known": true,
+          "lat": 51.2,
+          "lon": 5.5
+        }
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "battery-over-range",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "telemetry",
+      "payload": {
+        "schema": "robot.telemetry.v1",
+        "ts": 1790000000000,
+        "battery_pct": 101,
+        "temperature_c": 21.0,
+        "location": {
+          "known": true,
+          "lat": 51.2,
+          "lon": 5.5
+        }
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "unknown-location-with-coordinates",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "telemetry",
+      "payload": {
+        "schema": "robot.telemetry.v1",
+        "ts": 1790000000000,
+        "battery_pct": 72.5,
+        "location": {
+          "known": false,
+          "lat": 51.2,
+          "lon": 5.5
+        }
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "partial-location",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "telemetry",
+      "payload": {
+        "schema": "robot.telemetry.v1",
+        "ts": 1790000000000,
+        "battery_pct": 72.5,
+        "temperature_c": 21.0,
+        "location": {
+          "known": true,
+          "lat": 51.2
+        }
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "unsupported-start-command",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "state",
+      "payload": {
+        "schema": "robot.state.v1",
+        "ts": 1790000000000,
+        "mode": "autonomous",
+        "execution_state": "running",
+        "available_commands": [
+          "start"
+        ],
+        "fault_codes": []
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "duplicate-commands",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "state",
+      "payload": {
+        "schema": "robot.state.v1",
+        "ts": 1790000000000,
+        "mode": "autonomous",
+        "execution_state": "running",
+        "available_commands": [
+          "stop",
+          "stop"
+        ],
+        "fault_codes": []
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "invalid-severity",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "events/diagnostics",
+      "payload": {
+        "schema": "robot.event.v1",
+        "event_id": "motor-temperature-001",
+        "ts": 1790000000000,
+        "severity": "fatal",
+        "source": "robot-diagnostics",
+        "active": true,
+        "message": "issue-active",
+        "details": {
+          "temperature_c": 81
+        }
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "camera-error-without-reason",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "camera/status",
+      "payload": {
+        "schema": "robot.camera-status.v1",
+        "ts": 1790000000000,
+        "status": "error"
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "unknown-property",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "events/diagnostics",
+      "payload": {
+        "schema": "robot.event.v1",
+        "event_id": "motor-temperature-001",
+        "ts": 1790000000000,
+        "severity": "warning",
+        "source": "robot-diagnostics",
+        "active": true,
+        "message": "issue-active",
+        "details": {
+          "temperature_c": 81
+        },
+        "push_request": true
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "duplicate-services",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "services/status",
+      "payload": {
+        "schema": "robot.services-status.v1",
+        "ts": 1790000000000,
+        "services": [
+          {
+            "service": "navigation.service",
+            "status": "active",
+            "substatus": "running",
+            "available_actions": [
+              "start",
+              "stop",
+              "restart"
+            ]
+          },
+          {
+            "service": "navigation.service",
+            "status": "active",
+            "substatus": "running",
+            "available_actions": [
+              "start",
+              "stop",
+              "restart"
+            ]
+          }
+        ]
+      }
+    },
+    "implementation_rejects": true
+  },
+  {
+    "name": "unsupported-service-action",
+    "envelope": {
+      "protocol": "fleetly.local.v1",
+      "topic": "services/status",
+      "payload": {
+        "schema": "robot.services-status.v1",
+        "ts": 1790000000000,
+        "services": [
+          {
+            "service": "navigation.service",
+            "status": "active",
+            "substatus": "running",
+            "available_actions": [
+              "execute"
+            ]
+          }
+        ]
+      }
+    },
+    "implementation_rejects": true
+  }
+]

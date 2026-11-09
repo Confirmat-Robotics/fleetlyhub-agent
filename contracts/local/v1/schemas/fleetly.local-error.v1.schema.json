@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:fleetly.local-error.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "code",
+    "message"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fleetly.local-error.v1"
+    },
+    "code": {
+      "type": "string",
+      "maxLength": 64
+    },
+    "message": {
+      "type": "string",
+      "maxLength": 512
+    }
+  }
+}

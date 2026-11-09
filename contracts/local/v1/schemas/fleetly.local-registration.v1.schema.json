@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:fleetly.local-registration.v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "client_id",
+    "publish_routes",
+    "subscribe_routes"
+  ],
+  "properties": {
+    "schema": {
+      "const": "fleetly.local-registration.v1"
+    },
+    "client_id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$",
+      "maxLength": 64
+    },
+    "publish_routes": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "telemetry",
+          "state",
+          "events/+",
+          "camera/status",
+          "command-results/+",
+          "commands/pause",
+          "commands/stop",
+          "commands/resume",
+          "supervision",
+          "media/start",
+          "media/stop",
+          "services/status",
+          "services/control-results/+",
+          "services/control"
+        ]
+      }
+    },
+    "subscribe_routes": {
+      "type": "array",
+      "maxItems": 16,
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "enum": [
+          "telemetry",
+          "state",
+          "events/+",
+          "camera/status",
+          "command-results/+",
+          "commands/pause",
+          "commands/stop",
+          "commands/resume",
+          "supervision",
+          "media/start",
+          "media/stop",
+          "services/status",
+          "services/control-results/+",
+          "services/control"
+        ]
+      }
+    }
+  }
+}

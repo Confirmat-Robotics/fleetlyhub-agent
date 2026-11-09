@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:fleetly:local:v1:schema:robot.supervision.v1",
+  "title": "Fleetly aggregate supervision state v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema",
+    "revision",
+    "active",
+    "active_session_count",
+    "updated_at",
+    "expires_at"
+  ],
+  "properties": {
+    "schema": {
+      "const": "robot.supervision.v1"
+    },
+    "revision": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "active": {
+      "type": "boolean"
+    },
+    "active_session_count": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "updated_at": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "expires_at": {
+      "type": "integer",
+      "minimum": 1
+    }
+  },
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "active": {
+            "const": false
+          }
+        },
+        "required": [
+          "active"
+        ]
+      },
+      "then": {
+        "properties": {
+          "active_session_count": {
+            "const": 0
+          }
+        }
+      }
+    }
+  ]
+}

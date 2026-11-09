@@ -1,0 +1,12 @@
+{
+  "protocol": "fleetly.local.v1",
+  "topic": "events/notice",
+  "payload": {
+    "schema": "robot.event.v1",
+    "event_id": "inspection-001",
+    "ts": 1790000000000,
+    "severity": "info",
+    "source": "robot-software",
+    "message": "Inspection completed."
+  }
+}
